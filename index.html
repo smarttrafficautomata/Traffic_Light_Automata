@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Traffic Light Automata</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚦 Traffic Light Automata</h1>
+        <p>Finite State Machine Based Traffic Signal Simulation</p>
+    </header>
+
+    <main>
+
+        <!-- Traffic Signal -->
+        <section class="card">
+
+            <h2>Traffic Signal</h2>
+
+            <div class="traffic-light">
+
+                <div id="red" class="light"></div>
+
+                <div id="yellow" class="light"></div>
+
+                <div id="green" class="light"></div>
+
+            </div>
+
+            <h2 id="currentState">RED</h2>
+
+            <p>
+                Timer:
+                <span id="timer">10</span> seconds
+            </p>
+
+        </section>
+
+
+        <!-- Controls -->
+        <section class="card">
+
+            <h2>Simulation Controls</h2>
+
+            <button onclick="startSimulation()">
+                Start
+            </button>
+
+            <button onclick="stopSimulation()">
+                Stop
+            </button>
+
+            <button onclick="resetSimulation()">
+                Reset
+            </button>
+
+        </section>
+
+
+        <!-- Automata -->
+        <section class="card automata">
+
+            <h2>Finite State Automaton</h2>
+
+            <div class="states">
+
+                <div class="state red-state">
+                    <strong>RED</strong>
+                    <span>Stop</span>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="state green-state">
+                    <strong>GREEN</strong>
+                    <span>Go</span>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="state yellow-state">
+                    <strong>YELLOW</strong>
+                    <span>Prepare</span>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="state red-state">
+                    <strong>RED</strong>
+                    <span>Stop</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Transition Table -->
+        <section class="card">
+
+            <h2>State Transition Table</h2>
+
+            <table>
+
+                <tr>
+                    <th>Current State</th>
+                    <th>Input / Timer</th>
+                    <th>Next State</th>
+                </tr>
+
+                <tr>
+                    <td>RED</td>
+                    <td>10 seconds</td>
+                    <td>GREEN</td>
+                </tr>
+
+                <tr>
+                    <td>GREEN</td>
+                    <td>10 seconds</td>
+                    <td>YELLOW</td>
+                </tr>
+
+                <tr>
+                    <td>YELLOW</td>
+                    <td>3 seconds</td>
+                    <td>RED</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Automata Theory Project | Traffic Light FSM
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

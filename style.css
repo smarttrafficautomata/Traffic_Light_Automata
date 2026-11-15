@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef4f8;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+header {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #dbe3ea;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+/* Traffic Light */
+
+.traffic-light {
+    background: #20252b;
+    width: 130px;
+    padding: 18px;
+    margin: 20px auto;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.light {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 12px auto;
+    background: #4b5563;
+    transition: 0.3s;
+}
+
+#red.active {
+    background: #ef4444;
+    box-shadow: 0 0 25px #ef4444;
+}
+
+#yellow.active {
+    background: #facc15;
+    box-shadow: 0 0 25px #facc15;
+}
+
+#green.active {
+    background: #22c55e;
+    box-shadow: 0 0 25px #22c55e;
+}
+
+/* Buttons */
+
+button {
+    border: none;
+    padding: 12px 25px;
+    margin: 7px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Automata States */
+
+.states {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.state {
+    width: 130px;
+    height: 90px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    border: 3px solid;
+}
+
+.state strong {
+    font-size: 18px;
+}
+
+.state span {
+    font-size: 13px;
+}
+
+.red-state {
+    border-color: #ef4444;
+    background: #fff1f2;
+}
+
+.green-state {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.yellow-state {
+    border-color: #eab308;
+    background: #fefce8;
+}
+
+.arrow {
+    font-size: 30px;
+    font-weight: bold;
+    color: #64748b;
+}
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 14px;
+    border: 1px solid #dbe3ea;
+}
+
+th {
+    background: #e8f0f7;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    .states {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    table {
+        font-size: 13px;
+    }
+}
