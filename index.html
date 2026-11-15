@@ -5,145 +5,677 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Traffic Light Automata</title>
+    <title>Traffic Light Automata | FSM Simulation</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>🚦 Traffic Light Automata</h1>
-        <p>Finite State Machine Based Traffic Signal Simulation</p>
-    </header>
+    <!-- Navigation -->
 
-    <main>
+    <nav class="navbar">
 
-        <!-- Traffic Signal -->
-        <section class="card">
+        <div class="logo">
+            🚦 Traffic Light Automata
+        </div>
 
-            <h2>Traffic Signal</h2>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#simulation">Simulation</a>
+            <a href="#automata">Automata</a>
+            <a href="#transition">Transitions</a>
+            <a href="#about">About</a>
+        </div>
 
-            <div class="traffic-light">
+    </nav>
 
-                <div id="red" class="light"></div>
 
-                <div id="yellow" class="light"></div>
+    <!-- Hero Section -->
 
-                <div id="green" class="light"></div>
+    <section id="home" class="hero">
 
-            </div>
+        <div class="hero-content">
 
-            <h2 id="currentState">RED</h2>
+            <span class="badge">
+                THEORY OF COMPUTATION PROJECT
+            </span>
+
+            <h1>
+                Traffic Light
+                <span>Automata</span>
+            </h1>
 
             <p>
-                Timer:
-                <span id="timer">10</span> seconds
+                A Finite State Machine based simulation
+                demonstrating how traffic signals transition
+                between different states.
             </p>
 
-        </section>
+            <div class="hero-buttons">
+
+                <a href="#simulation" class="primary-btn">
+                    🚦 Start Simulation
+                </a>
+
+                <a href="#automata" class="secondary-btn">
+                    Explore Automata
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="mini-signal">
+
+                <div id="hero-red" class="mini-light red"></div>
+
+                <div id="hero-yellow" class="mini-light yellow"></div>
+
+                <div id="hero-green" class="mini-light green"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================================
+     TRAFFIC ROAD SIMULATION
+================================ -->
+
+    <section class="road-section" id="road">
+
+        <div class="section-heading">
+            <span>LIVE TRAFFIC ENVIRONMENT</span>
+            <h2>Traffic Road Simulation</h2>
+            <p>
+                Observe how vehicles respond to the traffic light
+                state in real time.
+            </p>
+        </div>
+
+        <div class="road-container">
+
+            <div class="road-signal">
+                <div class="road-signal-box">
+                    <div class="road-light active" id="road-red"></div>
+                    <div class="road-light" id="road-yellow"></div>
+                    <div class="road-light" id="road-green"></div>
+                </div>
+            </div>
+
+            <div class="road">
+
+                <div class="road-line"></div>
+
+                <div class="car car-one">🚗</div>
+
+                <div class="car car-two">🚙</div>
+
+                <div class="car car-three">🚕</div>
+
+            </div>
+
+        </div>
+
+        <div class="traffic-status">
+            <strong>Traffic Status:</strong>
+            <span id="trafficStatus">Vehicles are STOPPED</span>
+        </div>
+
+    </section>
 
 
-        <!-- Controls -->
-        <section class="card">
+    <!-- Project Overview -->
 
-            <h2>Simulation Controls</h2>
+    <section class=" section overview">
 
-            <button onclick="startSimulation()">
-                Start
-            </button>
+        <div class="section-heading">
 
-            <button onclick="stopSimulation()">
-                Stop
-            </button>
+            <span>PROJECT OVERVIEW</span>
 
-            <button onclick="resetSimulation()">
-                Reset
-            </button>
+            <h2>
+                Understanding Traffic Signals Through Automata
+            </h2>
 
-        </section>
+            <p>
+                Traffic lights can be represented as a deterministic
+                finite state machine where each signal represents
+                a state and the timer determines the transition.
+            </p>
+
+        </div>
 
 
-        <!-- Automata -->
-        <section class="card automata">
+        <div class="info-grid">
 
-            <h2>Finite State Automaton</h2>
+            <div class="info-card">
 
-            <div class="states">
+                <div class="icon">🔴</div>
 
-                <div class="state red-state">
-                    <strong>RED</strong>
-                    <span>Stop</span>
+                <h3>RED State</h3>
+
+                <p>
+                    Vehicles must stop while the signal remains red.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="icon">🟢</div>
+
+                <h3>GREEN State</h3>
+
+                <p>
+                    Vehicles are allowed to move through the intersection.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="icon">🟡</div>
+
+                <h3>YELLOW State</h3>
+
+                <p>
+                    Vehicles prepare to stop before the signal turns red.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Simulation -->
+
+    <section id="simulation" class="section simulation-section">
+
+        <div class="section-heading">
+
+            <span>LIVE SIMULATION</span>
+
+            <h2>Traffic Signal Controller</h2>
+
+            <p>
+                Observe the finite state machine operating in real time.
+            </p>
+
+        </div>
+
+
+        <div class="simulation-container">
+
+
+            <!-- Traffic Light -->
+
+            <div class="signal-panel">
+
+                <h3>Current Signal</h3>
+
+                <div class="traffic-light">
+
+                    <div id="red" class="light"></div>
+
+                    <div id="yellow" class="light"></div>
+
+                    <div id="green" class="light"></div>
+
                 </div>
 
-                <div class="arrow">→</div>
+                <div class="state-display">
 
-                <div class="state green-state">
-                    <strong>GREEN</strong>
-                    <span>Go</span>
+                    <span>Current State</span>
+
+                    <h2 id="currentState">RED</h2>
+
                 </div>
 
-                <div class="arrow">→</div>
+                <div class="timer-box">
 
-                <div class="state yellow-state">
-                    <strong>YELLOW</strong>
-                    <span>Prepare</span>
+                    <span>TIME REMAINING</span>
+
+                    <strong>
+                        <span id="timer">10</span>s
+                    </strong>
+
                 </div>
 
-                <div class="arrow">→</div>
 
-                <div class="state red-state">
-                    <strong>RED</strong>
-                    <span>Stop</span>
+                <div class="controls">
+
+                    <button onclick="startSimulation()" class="start-btn">
+                        ▶ Start
+                    </button>
+
+                    <button onclick="stopSimulation()" class="stop-btn">
+                        ⏸ Stop
+                    </button>
+
+                    <button onclick="resetSimulation()" class="reset-btn">
+                        ↻ Reset
+                    </button>
+
                 </div>
 
             </div>
 
-        </section>
+
+            <!-- State Information -->
+
+            <div class="simulation-info">
+
+                <h3>How It Works</h3>
+
+                <div class="rule">
+
+                    <span>01</span>
+
+                    <div>
+                        <strong>RED</strong>
+                        <p>Stop for 10 seconds.</p>
+                    </div>
+
+                </div>
 
 
-        <!-- Transition Table -->
-        <section class="card">
+                <div class="rule">
+
+                    <span>02</span>
+
+                    <div>
+                        <strong>GREEN</strong>
+                        <p>Go for 10 seconds.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="rule">
+
+                    <span>03</span>
+
+                    <div>
+                        <strong>YELLOW</strong>
+                        <p>Prepare for 3 seconds.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="rule">
+
+                    <span>04</span>
+
+                    <div>
+                        <strong>REPEAT</strong>
+                        <p>The machine returns to RED.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Automata -->
+
+    <section id="automata" class="section automata-section">
+
+        <div class="section-heading">
+
+            <span>FINITE STATE MACHINE</span>
+
+            <h2>Automata State Diagram</h2>
+
+            <p>
+                Each traffic signal is represented as a state.
+                The timer acts as the transition condition.
+            </p>
+
+        </div>
+
+
+        <div class="fsm-diagram">
+
+
+            <div class="fsm-state red-node">
+
+                <div class="node-circle">
+                    R
+                </div>
+
+                <h3>RED</h3>
+
+                <p>Stop</p>
+
+            </div>
+
+
+            <div class="transition-arrow">
+
+                <span>10 sec</span>
+
+                <strong>→</strong>
+
+            </div>
+
+
+            <div class="fsm-state green-node">
+
+                <div class="node-circle">
+                    G
+                </div>
+
+                <h3>GREEN</h3>
+
+                <p>Go</p>
+
+            </div>
+
+
+            <div class="transition-arrow">
+
+                <span>10 sec</span>
+
+                <strong>→</strong>
+
+            </div>
+
+
+            <div class="fsm-state yellow-node">
+
+                <div class="node-circle">
+                    Y
+                </div>
+
+                <h3>YELLOW</h3>
+
+                <p>Prepare</p>
+
+            </div>
+
+
+            <div class="transition-arrow">
+
+                <span>3 sec</span>
+
+                <strong>→</strong>
+
+            </div>
+
+
+            <div class="fsm-state red-node">
+
+                <div class="node-circle">
+                    R
+                </div>
+
+                <h3>RED</h3>
+
+                <p>Stop</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="fsm-formula">
+
+            <strong>Initial State:</strong> RED
+
+            <span>•</span>
+
+            <strong>States:</strong> {RED, GREEN, YELLOW}
+
+            <span>•</span>
+
+            <strong>Transitions:</strong> Timer Based
+
+        </div>
+
+    </section>
+
+
+    <!-- Transition Table -->
+
+    <section id="transition" class="section transition-section">
+
+        <div class="section-heading">
+
+            <span>TRANSITION FUNCTION</span>
 
             <h2>State Transition Table</h2>
 
+            <p>
+                The table defines how the automaton moves from
+                one state to another.
+            </p>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
             <table>
 
-                <tr>
-                    <th>Current State</th>
-                    <th>Input / Timer</th>
-                    <th>Next State</th>
-                </tr>
+                <thead>
 
-                <tr>
-                    <td>RED</td>
-                    <td>10 seconds</td>
-                    <td>GREEN</td>
-                </tr>
+                    <tr>
 
-                <tr>
-                    <td>GREEN</td>
-                    <td>10 seconds</td>
-                    <td>YELLOW</td>
-                </tr>
+                        <th>Current State</th>
 
-                <tr>
-                    <td>YELLOW</td>
-                    <td>3 seconds</td>
-                    <td>RED</td>
-                </tr>
+                        <th>Input / Timer</th>
+
+                        <th>Action</th>
+
+                        <th>Next State</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            <span class="table-state red-text">
+                                RED
+                            </span>
+                        </td>
+
+                        <td>10 seconds</td>
+
+                        <td>Stop vehicles</td>
+
+                        <td>
+                            <span class="table-state green-text">
+                                GREEN
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <span class="table-state green-text">
+                                GREEN
+                            </span>
+                        </td>
+
+                        <td>10 seconds</td>
+
+                        <td>Allow vehicles</td>
+
+                        <td>
+                            <span class="table-state yellow-text">
+                                YELLOW
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <span class="table-state yellow-text">
+                                YELLOW
+                            </span>
+                        </td>
+
+                        <td>3 seconds</td>
+
+                        <td>Prepare to stop</td>
+
+                        <td>
+                            <span class="table-state red-text">
+                                RED
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
 
             </table>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
 
+
+    <!-- Automata Concepts -->
+
+    <section class="section concepts-section">
+
+        <div class="section-heading">
+
+            <span>AUTOMATA CONCEPTS</span>
+
+            <h2>How This Project Uses FSM</h2>
+
+        </div>
+
+
+        <div class="concept-grid">
+
+            <div class="concept-card">
+
+                <h3>States</h3>
+
+                <p>
+                    RED, GREEN and YELLOW represent
+                    the finite states of the automaton.
+                </p>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <h3>Input</h3>
+
+                <p>
+                    Timer values act as the input condition
+                    that triggers state transitions.
+                </p>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <h3>Transition</h3>
+
+                <p>
+                    The transition function determines
+                    the next state of the traffic signal.
+                </p>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <h3>Deterministic Behaviour</h3>
+
+                <p>
+                    Every state follows a fixed transition,
+                    making the machine deterministic.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about" class="section about-section">
+
+        <div class="about-card">
+
+            <span>ABOUT THE PROJECT</span>
+
+            <h2>
+                Traffic Light Automata
+            </h2>
+
+            <p>
+                This project demonstrates the application of
+                Finite Automata in a real-world traffic control
+                system. The traffic signal is modeled as a
+                deterministic finite state machine.
+            </p>
+
+            <div class="project-tags">
+
+                <span>Automata Theory</span>
+
+                <span>Finite State Machine</span>
+
+                <span>HTML</span>
+
+                <span>CSS</span>
+
+                <span>JavaScript</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
 
     <footer>
 
+        <h3>🚦 Traffic Light Automata</h3>
+
         <p>
-            Automata Theory Project | Traffic Light FSM
+            Theory of Computation Project
+        </p>
+
+        <p class="copyright">
+            © 2026 | Finite State Machine Simulation
         </p>
 
     </footer>
