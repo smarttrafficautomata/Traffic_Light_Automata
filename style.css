@@ -1379,3 +1379,128 @@ footer p {
 .car-three {
     top: 18px !important;
 }
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   FSM TRANSITION ARROWS
+========================================= */
+
+.fsm-diagram {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    flex-wrap: nowrap !important;
+}
+
+.transition-arrow {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 120px !important;
+    height: 60px !important;
+
+    color: #2563eb !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+/* Actual arrow line */
+.transition-arrow::before {
+    content: "" !important;
+
+    position: absolute !important;
+    left: 8px !important;
+    right: 8px !important;
+    top: 20px !important;
+
+    height: 3px !important;
+
+    background: #2563eb !important;
+    border-radius: 10px !important;
+}
+
+/* Arrow head */
+.transition-arrow::after {
+    content: "➜" !important;
+
+    position: absolute !important;
+    right: 0 !important;
+    top: 7px !important;
+
+    font-size: 28px !important;
+    color: #2563eb !important;
+}
+
+/* Transition text */
+.transition-arrow {
+    padding-top: 28px !important;
+}
